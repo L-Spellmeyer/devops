@@ -1,0 +1,18 @@
+#! /bin/bash
+
+strBaseURL="http://gutendex.com/books/?ids="
+strBooks=""
+for strBook in "$@"
+do
+strBooks+="$strBook,"
+done
+
+
+echo ${string::-1}
+
+# cut last character off strBooks
+strCurlURL="$strBaseURls$strBooks"
+arrResult=$(curl  ${strCurlURL})
+echo $arrResult
+
+#
